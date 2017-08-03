@@ -1,0 +1,7 @@
+octave-workspace
+*.xz
+*.gz
+*.deb
+*.rpm
+src
+pkg

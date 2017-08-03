@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Marvin Sketch
+Exec=/opt/chemaxon/marvinsuite/MarvinSketch
+Icon=marvin-sketch
+StartupWMClass=com-install4j-runtime-launcher-UnixLauncher
+MimeType=text/plain;chemical/x-cif;chemical/x-cml;chemical/x-mdl-molfile;chemical/x-mdl-sdfile;
