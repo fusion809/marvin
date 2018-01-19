@@ -10,7 +10,7 @@ depends=('jre8-openjdk')
 source=("http://dl.chemaxon.com/marvin/${pkgver}/Marvin_linux_$pkgver.rpm"
         "MarvinSketch.desktop"
         "marvin-sketch-symbolic.svg")
-md5sums=('d6ff2f44e586ddf8a447ab5125d6f43c'
+md5sums=('a5cd4a1d9fb0a0028350785c7fd23c23'
          'fcf6e668a13ddb2fa55b790b132a2ab2'
          'e6758f94b843b97804112fa0420ba1bb')
 
