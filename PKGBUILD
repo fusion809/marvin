@@ -1,6 +1,6 @@
 # Maintainer: c0ldcat <firez199984@gmail.com>
 pkgname=marvin
-pkgver=18.10
+pkgver=18.14
 pkgrel=1
 pkgdesc="Intuitive applications and API for chemical sketching, visualization and data exploration"
 arch=('any')
@@ -9,18 +9,26 @@ license=('proprietary')
 depends=('jre8-openjdk')
 source=("http://dl.chemaxon.com/marvin/${pkgver}.0/marvin_linux_$pkgver.rpm"
         "MarvinSketch.desktop"
-        "marvin-sketch-symbolic.svg")
-md5sums=('c08b59e5e67afd87ff5362954ab836f4'
-         'fcf6e668a13ddb2fa55b790b132a2ab2'
-         'e6758f94b843b97804112fa0420ba1bb')
+        "MarvinView.desktop")
+md5sums=('32011d1739ad1dc6dae48342d9021eb7'
+         '3c47d9b0629e55cda2a48356cf1c61b6'
+         'cb2d322b8a4832d41490879ae4879a3a')
 
 package() {
+    # Install desktop config files
+    mkdir -p ${pkgdir}/usr/share/applications
     install -Dm755 MarvinSketch.desktop ${pkgdir}/usr/share/applications/MarvinSketch.desktop
+    install -Dm755 MarvinView.desktop ${pkgdir}/usr/share/applications/MarvinView.desktop
 
+    # Copy opt dir contents across
     cp -R opt ${pkgdir}/opt
 
-    install -Dm644 opt/chemaxon/marvinsuite/.install4j/MarvinSketch.png ${pkgdir}/usr/share/pixmaps/marvin-sketch.png
-    install -Dm644 marvin-sketch-symbolic.svg ${pkgdir}/usr/share/pixmaps/marvin-sketch-symbolic.svg
+    # Create pixmaps dir
+    mkdir -p ${pkgdir}/usr/share/pixmaps
+    ln -sf /opt/chemaxon/marvinsuite/.install4j/MarvinSketch.png ${pkgdir}/usr/share/pixmaps/MarvinSketch.png
+    ln -sf /opt/chemaxon/marvinsuite/.install4j/MarvinView.png ${pkgdir}/usr/share/pixmaps/MarvinView.png
+
+    # Create bin dir
     mkdir -p ${pkgdir}/usr/bin
     ln -sf /opt/chemaxon/marvinsuite/bin/cxcalc ${pkgdir}/usr/bin/cxcalc
     ln -sf /opt/chemaxon/marvinsuite/bin/cxtrain ${pkgdir}/usr/bin/cxtrain
