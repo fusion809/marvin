@@ -1,6 +1,6 @@
 # Maintainer: c0ldcat <firez199984@gmail.com>
 pkgname=marvin
-pkgver=18.14
+pkgver=18.15
 pkgrel=1
 pkgdesc="Intuitive applications and API for chemical sketching, visualization and data exploration"
 arch=('any')
@@ -10,7 +10,7 @@ depends=('jre8-openjdk')
 source=("http://dl.chemaxon.com/marvin/${pkgver}.0/marvin_linux_$pkgver.rpm"
         "MarvinSketch.desktop"
         "MarvinView.desktop")
-md5sums=('32011d1739ad1dc6dae48342d9021eb7'
+md5sums=('2994f4f55af8f51b83cf8fddda55299b'
          '3c47d9b0629e55cda2a48356cf1c61b6'
          'cb2d322b8a4832d41490879ae4879a3a')
 
