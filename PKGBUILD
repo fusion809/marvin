@@ -1,6 +1,6 @@
 # Maintainer: c0ldcat <firez199984@gmail.com>
 pkgname=marvin
-pkgver=18.27
+pkgver=19.7
 pkgrel=1
 pkgdesc="Intuitive applications and API for chemical sketching, visualization and data exploration"
 arch=('any')
@@ -10,7 +10,7 @@ depends=('jre8-openjdk')
 source=("http://dl.chemaxon.com/marvin/${pkgver}.0/marvin_linux_$pkgver.rpm"
         "MarvinSketch.desktop"
         "MarvinView.desktop")
-md5sums=('5e2ea36cc235a526003995d34e25f425'
+md5sums=('b8d86936ec7b6ecf6e777ff930d61758'
          '3c47d9b0629e55cda2a48356cf1c61b6'
          'cb2d322b8a4832d41490879ae4879a3a')
 
@@ -21,7 +21,9 @@ package() {
     install -Dm755 MarvinView.desktop ${pkgdir}/usr/share/applications/MarvinView.desktop
 
     # Copy opt dir contents across
-    cp -R opt ${pkgdir}/opt
+    mkdir -p ${pkgdir}/opt/chemaxon/marvinsuite/.install4j
+    cp -R opt/chemaxon/marvinsuite/.install4j/{*.lprop,*.uuid,*.utf8,*.png,*.ico,*.jar,*.conf} ${pkgdir}/opt/chemaxon/marvinsuite/.install4j
+    cp -R opt/chemaxon/marvinsuite/* ${pkgdir}/opt/chemaxon/marvinsuite
 
     # Create pixmaps dir
     mkdir -p ${pkgdir}/usr/share/pixmaps
