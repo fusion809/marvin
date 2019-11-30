@@ -22,7 +22,7 @@ package() {
 
     # Copy opt dir contents across
     mkdir -p ${pkgdir}/opt/chemaxon/marvinsuite/.install4j
-    cp -R opt/chemaxon/marvinsuite/.install4j/{*.lprop,*.uuid,*.utf8,*.png,*.ico,*.jar,*.conf} ${pkgdir}/opt/chemaxon/marvinsuite/.install4j
+    cp -R opt/chemaxon/marvinsuite/.install4j/{*.uuid,*.utf8,*.png,*.ico,*.jar,*.conf} ${pkgdir}/opt/chemaxon/marvinsuite/.install4j
     cp -R opt/chemaxon/marvinsuite/* ${pkgdir}/opt/chemaxon/marvinsuite
 
     # Create pixmaps dir
