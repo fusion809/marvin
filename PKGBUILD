@@ -33,7 +33,7 @@ package() {
 
     # Install license
     mkdir -p ${pkgdir}/usr/share/licenses/marvin
-    install -Dm644 /opt/chemaxon/marvinsuite/EULA.txt /usr/share/licenses/marvin/LICENSE
+    install -Dm644 /opt/chemaxon/marvinsuite/EULA.txt ${pkgdir}/usr/share/licenses/marvin/LICENSE
 
     # Create bin dir
     mkdir -p ${pkgdir}/usr/bin
