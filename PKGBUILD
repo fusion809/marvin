@@ -1,6 +1,6 @@
 # Maintainer: c0ldcat <firez199984@gmail.com>
 pkgname=marvin
-pkgver=20.1.0
+pkgver=20.2.0
 _pkgver=$(echo $pkgver | sed 's/.[0-9]$//g')
 pkgrel=1
 pkgdesc="Intuitive applications and API for chemical sketching, visualization and data exploration"
@@ -11,7 +11,7 @@ depends=('jre8-openjdk')
 source=("marvin_linux_${pkgver}.rpm::http://dl.chemaxon.com/marvin/${pkgver}/marvin_linux_${_pkgver}.rpm"
         "MarvinSketch.desktop"
         "MarvinView.desktop")
-md5sums=('13a1f615a899ea68b1242ac70c38666c'
+md5sums=('d4efa6190a298cf9f2a9c75223b013ca'
          '3c47d9b0629e55cda2a48356cf1c61b6'
          'cb2d322b8a4832d41490879ae4879a3a')
 
@@ -30,6 +30,10 @@ package() {
     mkdir -p ${pkgdir}/usr/share/pixmaps
     ln -sf /opt/chemaxon/marvinsuite/.install4j/MarvinSketch.png ${pkgdir}/usr/share/pixmaps/MarvinSketch.png
     ln -sf /opt/chemaxon/marvinsuite/.install4j/MarvinView.png ${pkgdir}/usr/share/pixmaps/MarvinView.png
+
+    # Install license
+    mkdir -p ${pkgdir}/usr/share/licenses/marvin
+    install -Dm644 /opt/chemaxon/marvinsuite/EULA.txt /usr/share/licenses/marvin/LICENSE
 
     # Create bin dir
     mkdir -p ${pkgdir}/usr/bin
